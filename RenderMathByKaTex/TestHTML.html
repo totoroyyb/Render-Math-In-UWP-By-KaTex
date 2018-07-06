@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="/JS/lib/winjs-4.0.1/css/ui-light.css" rel="stylesheet" />
+    <script src="/JS/lib/winjs-4.0.1/js/base.js"></script>
+    <script src="/JS/lib/winjs-4.0.1/js/ui.js"></script>
+    <link href="/JS/css/default.css" rel="stylesheet" />
+    <link href="/JS/Scripts/katex/katex.min.css" rel="stylesheet" />
+    <script src="/JS/Scripts/katex/katex.min.js"></script>
+
+    <script>
+        function LoadFormula(param) {
+            katex.render(param, formulaElement);
+        }
+
+        function GetHTMLStr() {
+            return document.documentElement.outerHTML;
+        }
+
+        function LoadSample1() {
+            katex.render("J_m\\left(x\\right)=\\sum_{k=0}^{\\infty}\\frac{{(-1)}^k\\left(\\frac{x}{2}\\right)^{m+2k}}{k!\\left(m+k\\right)!}", formulaElement);
+        }
+
+        function LoadSample2() {
+            katex.render("\\int_{a}^{b}udv=uv\\left|{b\\atop a}\\right.-\\int_{a}^{b}vdu", formulaElement);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="formulaElement">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿<Page
+    x:Class="RenderMathByKaTex.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RenderMathByKaTex"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"    
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid BorderBrush="Gray" BorderThickness="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <WebView Name="MathWebView" Source="ms-appx-web:///TestHTML.html" DefaultBackgroundColor="Transparent"
+                     LoadCompleted="MathWebView_LoadCompleted"/>
+            <Grid Grid.Row="1" BorderBrush="Gray" BorderThickness="0,1,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <TextBox PlaceholderText="Enter LaTex for first formula grid"
+                         Name="FirstFormulaBox"/>
+                <Button Content="Confirm" Click="Button_Click" Grid.Column="1"/>
+            </Grid>
+        </Grid>
+
+        <Grid BorderBrush="Gray" BorderThickness="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <WebView Name="SecondWebView" Source="ms-appx-web:///TestHTML.html" DefaultBackgroundColor="Transparent"
+                     LoadCompleted="SecondWebView_LoadCompleted"/>
+            <Grid Grid.Row="1" BorderBrush="Gray" BorderThickness="0,1,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <TextBox PlaceholderText="Enter LaTex for second formula grid"
+                         Name="SecondFormulaBox"/>
+                <Button Content="Confirm" Click="Button_Click_1" Grid.Column="1"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
